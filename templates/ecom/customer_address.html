@@ -1,0 +1,38 @@
+{% extends 'ecom/customer_base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/CSS/customer_address.css">
+</head>
+{%if product_in_cart%}
+<form method="post">
+  {% csrf_token %}
+<ul class="form-style-1">
+    <li>
+        <label>Email <span class="required">*</span></label>
+        {% render_field addressForm.Email class="field-long" placeholder="Email" %}
+
+    </li>
+    <li>
+        <label>Mobile <span class="required">*</span></label>
+        {% render_field addressForm.Mobile class="field-long" placeholder="Mobile" %}
+    </li>
+
+    <li>
+        <label>Shipment Address <span class="required">*</span></label>
+        {% render_field addressForm.Address id="field5" class="field-long field-textarea" placeholder="Building Number,city, pin" %}
+
+    </li>
+    <li>
+        <input type="submit" value="Proceed To Pay" />
+    </li>
+</ul>
+</form>
+{%else%}
+<br><br>
+<h1 style="text-align:center; color:red;"> First Add Product In Cart </h1>
+<br><br><br><br><br><br><br><br><br><br>
+{%endif%}
+
+{% endblock content %}

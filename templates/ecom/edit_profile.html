@@ -1,0 +1,61 @@
+{% extends 'ecom/customer_base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/CSS/edit_profile.css">
+  <link rel="shortcut icon" type="image/jpeg" href="{% static 'favicon/favicon.jpg' %}">
+
+</head>
+
+<br><br><br>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container register-form">
+    <div class="form">
+      <div class="note">
+        <p>EDIT PROFILE</p>
+      </div>
+      <div class="form-content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+            </div>
+            <div class="form-group">
+              {% render_field userForm.username class="form-control" placeholder="Username" %}
+            </div>
+            <div class="form-group">
+              {% render_field userForm.email class="form-control" placeholder="Email" %}
+            </div>
+            <div class="form-group">
+              {% if customerForm.profile_pic.value %}
+                <img src="{{ customerForm.profile_pic.url }}" height="100" width="100">
+              {% endif %}
+              <div class="custom-file">
+                {% render_field customerForm.profile_pic class="custom-file-input" id="inputGroupFile02" aria-describedby="inputGroupFileAddon02" %}
+                <label class="custom-file-label" for="inputGroupFile02">Choose profile picture</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+            </div>
+            <div class="form-group">
+              {% render_field userForm.password class="form-control" placeholder="Password" %}
+            </div>
+            <div class="form-group">
+              {% render_field customerForm.address class="form-control" placeholder="Address" %}
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btnSubmit">Edit</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock content %}

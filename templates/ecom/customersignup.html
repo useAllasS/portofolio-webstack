@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>E-commerce Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="/static/CSS/customersignup.css">
+    <link rel="shortcut icon" type="image/jpeg" href="{% static 'favicon/favicon.jpg' %}">
+
+  </head>
+  <body>
+    {% include "ecom/navbar.html" %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <form class="box" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <h1>Customer Sign Up</h1>
+
+              {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+              {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+
+              {% for error in userForm.username.errors %}
+               <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+
+              {% render_field userForm.username class="form-control" placeholder="Username" %}
+              {% render_field userForm.email  type="text" class="form-control" placeholder="Email" %}
+
+              {% for error in userForm.email.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+
+              {% render_field userForm.password class="form-control" placeholder="Password" %}
+              {% render_field customerForm.address class="form-control" placeholder="Address" %}
+              {% render_field customerForm.mobile class="form-control " placeholder="Contact" %}
+<div class="form-group">
+  <label for="{{ customerForm.profile_pic.id_for_label }}" class="btn btn-primary">
+    Select Profile Picture
+  </label>
+  {{ customerForm.profile_pic }}
+</div>
+
+              <input type="submit" name="" value="Create">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br>
+    {% include "ecom/footer.html" %}
+  </body>
+</html>

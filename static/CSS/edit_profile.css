@@ -1,0 +1,75 @@
+body {
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.note {
+  text-align: center;
+  height: 80px;
+  background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+  background: linear-gradient(to right, #0072ff, #8811c5);
+  color: #fff;
+  font-weight: bold;
+  line-height: 80px;
+}
+
+.form-content {
+  padding: 5%;
+  border: 1px solid #ced4da;
+  margin-bottom: 2%;
+}
+
+.form-control {
+  border-radius: 1.5rem;
+}
+
+.btnSubmit {
+  border: none;
+  border-radius: 1.5rem;
+  padding: 1%;
+  width: 20%;
+  cursor: pointer;
+  background: #0062cc;
+  color: #fff;
+}
+
+.menu {
+  top: 50px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.profile-pic {
+  display: none;
+}
+
+.custom-file-label {
+  overflow: hidden;
+}
+
+.custom-file-label::after {
+  content: "Browse";
+  display: inline-block;
+  background: #0062cc;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.custom-file-label::before {
+  content: "Choose file";
+  display: inline-block;
+  color: #aaa;
+  padding: 5px 10px;
+  border: 1px solid #aaa;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-right: 10px;
+}

@@ -1,0 +1,67 @@
+ /* Social section */
+  footer {
+  background: linear-gradient(45deg, #a29bfe, #0984e3);
+  margin-top: 20px;
+  padding: 50px 0;
+  position: initial;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -12px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 5px;
+  font-size: 20px;
+ /* color: #212529;*/
+ /* background-color: #fff;*/
+  border: none;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #3b5772;
+  color: #fff;
+}
+
+.fa-facebook {
+  color: #0b43bb;
+}
+
+.fa-instagram {
+  color: #8f26b8;
+}
+
+/* Copyright */
+.footer-text {
+  color: #c0defb;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer-text span {
+  font-weight: 700;
+  color: #f7f8f9;
+}
+.contact-link {
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0);
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-link:hover {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}

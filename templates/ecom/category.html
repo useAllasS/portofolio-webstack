@@ -1,0 +1,183 @@
+{% extends 'ecom/homebase.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .product-card {
+    width: 300px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .product-info {
+    padding: 20px;
+  }
+
+  .product-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .product-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .product-price {
+    font-size: 16px;
+    color: #ff5722;
+    font-weight: bold;
+  }
+
+  .add-to-cart {
+    display: inline-block;
+    background-color: #ff5722;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .add-to-cart:hover {
+    background-color: #f44336;
+  }
+</style>
+
+<h3 style="text-align: center; color: #3E454C;">Here are products of the {{ category }}</h3>
+<br>
+
+{% if products %}
+<div class="product-grid">
+  {% for p in products %}
+  <div class="product-card">
+    <a href="{% url 'product_detail' p.id %}">
+      <img src="{% static p.product_image.url %}" alt="product pic">
+    </a>
+    <div class="product-info">
+      <div class="product-name">{{ p.name }}</div>
+      <div class="product-description">{{ p.description }}</div>
+      <div class="product-price">${{ p.price }}</div>
+      <a class="add-to-cart" href="{% url 'add-to-cart' p.id %}">Add To Cart</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% else %}
+<h3 style="text-align: center; color: #3E454C;">No products found for the {{ category }}</h3>
+{% endif %}
+
+{% if messages %}
+<script>
+  {% for message in messages %}
+  alert('{{ message }}');
+  {% endfor %}
+</script>
+{% endif %}
+
+<br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock content %}
+
+
+
+
+<!--
+
+{% extends 'ecom/homebase.html' %}
+{% load static %}
+
+{% block content %}
+
+<h3 style="text-align:center; color:#3E454C;">Here are products of the {{ category }}</h3>
+<br>
+
+{% if products %}
+<div class="row">
+  {% for p in products %}
+  <div class="column">
+    <div class="container page-wrapper" style="width: 450px;">
+      <div class="page-inner">
+        <div class="row">
+          <div class="el-wrapper">
+            <div class="box-up">
+              <a href="{% url 'product_detail' p.id %}">
+                <img class="img" src="{% static p.product_image.url %}" alt="product pic" height="300px" width="300px" color="none">
+              </a>
+              <div class="img-info">
+                <div class="info-inner">
+                  <span style="background-color:#3e454c; color:fbfbfb;" class="p-company">{{ p.name }}</span>
+                </div>
+                <div class="a-size">{{ p.description }}</div>
+              </div>
+            </div>
+
+            <div class="box-down">
+              <div class="h-bg">
+                <div class="h-bg-inner"></div>
+              </div>
+
+              <a class="cart" href="{% url 'add-to-cart' p.id  %}">
+                <span class="price">${{ p.price }}</span>
+                <span class="add-to-cart">
+                  <span class="txt"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if forloop.counter|divisibleby:"3" %}
+  </div>
+  <div class="row">
+    <br><br><br><br><br>
+  {% endif %}
+  {% endfor %}
+</div>
+
+{% else %}
+<h3 style="text-align:center; color:#3E454C;">No products found for the {{ category }}</h3>
+{% endif %}
+
+{% if messages %}
+<script>
+  {% for message in messages %}
+  alert('{{ message }}');
+  {% endfor %}
+</script>
+{% endif %}
+
+<br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock content %}
+-->

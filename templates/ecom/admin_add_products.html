@@ -1,0 +1,65 @@
+{% extends 'ecom/admin_base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/CSS/admin_add_products.css">
+</head>
+<br><br><br><br><br><br>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container register-form">
+    <div class="form">
+      <div class="note">
+        <p>ADD PRODUCTS</p>
+      </div>
+      <div class="form-content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Product Name</label>
+              {% render_field productForm.name class="form-control" placeholder="Product Name" %}
+            </div>
+            <div class="form-group">
+              <label for="">Short Description</label>
+              {% render_field productForm.description class="form-control" placeholder="Description" %}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Product Price ($)</label>
+              {% render_field productForm.price class="form-control" placeholder="52" %}
+            </div>
+            <div class="form-group">
+              <label for="">Product Image</label>
+              {% render_field productForm.product_image class="form-control" placeholder="product_image" %}
+            </div>
+            <div class="form-group">
+              <label for="">Categories</label>
+              {{ productForm.categories }}
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btnSubmit">ADD</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script>
+$(document).ready(function() {
+  $("form").submit(function() {
+    var productImage = $("#id_product_image").val();
+    if (productImage == '') {
+      $("#error-message").html("Please select a product image");
+      return false;
+    } else {
+      $("#error-message").html("");
+      return true;
+    }
+  });
+});
+</script>
+{% endblock content %}

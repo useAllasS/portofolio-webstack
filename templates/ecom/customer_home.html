@@ -1,0 +1,194 @@
+{% extends 'ecom/customer_base.html' %}
+{% load static %}
+{% block content %}
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/CSS/customer_home.css">
+  <link rel="shortcut icon" type="image/jpeg" href="{% static 'favicon/favicon.jpg' %}">
+
+    <style>
+      .slide-1 {
+        background-image: url("{% static 'images/pro.jpg' %}");
+
+      }
+      .slide-2 {
+        background-image: url("{% static 'images/pro2.jpg' %}");
+      }
+      .slide-3 {
+        background-image: url("{% static 'images/pro1.jpg' %}");
+      }
+      .slide-4 {
+        background-image: url("{% static 'images/pro4.jpg' %}");
+      }
+    </style>
+
+</head>
+<div class="row">
+  <div class="col-md-12">
+    <div class="slider-container">
+      <div class="menu">
+        <label for="slide-dot-1"></label>
+        <label for="slide-dot-2"></label>
+        <label for="slide-dot-3"></label>
+        <label for="slide-dot-4"></label>
+      </div>
+      
+      <input id="slide-dot-1" type="radio" name="slides" checked>
+        <div class="slide slide-1"></div>
+      
+      <input id="slide-dot-2" type="radio" name="slides">
+        <div class="slide slide-2"></div>
+      
+      <input id="slide-dot-3" type="radio" name="slides">
+        <div class="slide slide-3"></div>
+      <input id="slide-dot-4" type="radio" name="slides">
+        <div class="slide slide-4"></div>
+    </div>
+  </div>
+</div>
+<script>
+  // set the interval time in milliseconds
+  var intervalTime = 5000;
+  // set the index of the initial slide
+  var currentIndex = 0;
+  // get all the radio buttons and slides
+  var slides = document.querySelectorAll('.slide');
+  var radios = document.querySelectorAll('input[name="slides"]');
+
+  // function to simulate a click on the next radio button
+  function showNextSlide() {
+    // get the next index
+    var nextIndex = (currentIndex + 1) % radios.length;
+    // simulate a click on the next radio button
+    radios[nextIndex].click();
+    // update the current index
+    currentIndex = nextIndex;
+  }
+
+  // start the automatic slideshow
+  var intervalId = setInterval(showNextSlide, intervalTime);
+</script>
+
+
+{% if products %}
+  <h3 style="text-align:center; color:#3E454C;">{{ word }}</h3>
+  <br>
+  <!-- products data start -->
+  <div class="row">
+    {% for p in products|slice:":6" %}
+      <!-- card1 -->
+      <div class="column">
+        <div class="container page-wrapper" style="width: 450px;">
+          <div class="page-inner">
+            <div class="row">
+              <div class="el-wrapper">
+                <div class="box-up">
+                  <a href="{% url 'product_detail' p.id %}">
+                    <img class="img" src="{% static p.product_image.url %}" alt="product pic" height="300px" width="300px">
+                  </a>
+                  <div class="img-info">
+                    <div class="info-inner">
+                      <span style="background-color:#3e454c; color:fbfbfb;" class="p-company">{{ p.name }}</span>
+                    </div>
+                    <div class="a-size">{{ p.description }}</div>
+                  </div>
+                </div>
+                <div class="box-down">
+                  <div class="h-bg">
+                    <div class="h-bg-inner"></div>
+                  </div>
+                  <a class="cart" href="{% url 'add-to-cart' p.id  %}">
+                    <span class="price">${{ p.price }}</span>
+                    <span class="add-to-cart">
+                      <span class="txt"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- card1 end -->
+      {% if forloop.counter|divisibleby:"3" and not forloop.last %}
+        </div>
+        <div class="row">
+          <br><br><br><br><br>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <!-- products data end -->
+
+  <div id="more-products" style="display: none;">
+    <div class="row">
+      {% for p in products|slice:"6:" %}
+        <!-- card1 -->
+        <div class="column">
+          <div class="container page-wrapper" style="width: 450px;">
+            <div class="page-inner">
+              <div class="row">
+                <div class="el-wrapper">
+                  <div class="box-up">
+                    <a href="{% url 'product_detail' p.id %}">
+                      <img class="img" src="{% static p.product_image.url %}" alt="product pic" height="300px" width="300px">
+                    </a>
+                    <div class="img-info">
+                      <div class="info-inner">
+                        <span style="background-color:#3e454c; color:fbfbfb;" class="p-company">{{ p.name }}</span>
+                      </div>
+                      <div class="a-size">{{ p.description }}</div>
+                    </div>
+                  </div>
+                  <div class="box-down">
+                    <div class="h-bg">
+                      <div class="h-bg-inner"></div>
+                    </div>
+                    <a class="cart" href="{% url 'add-to-cart' p.id  %}">
+                      <span class="price">${{ p.price }}</span>
+                      <span class="add-to-cart">
+                        <span class="txt"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card1 end -->
+        {% if forloop.counter|divisibleby:"3" and not forloop.last %}
+          </div>
+          <div class="row">
+            <br><br><br><br><br>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+<br><br><br><br><br><br><br><br>
+  {% if products|length > 6 %}
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <button id="more-button" class="btn btn-primary">Show More Products</button>
+      </div>
+    </div>
+  {% endif %}
+
+{% else %}
+  <h3 style="text-align:center; color:#060707;">No Search Found</h3>
+{% endif %}
+
+<br><br><br>
+
+<br><br><br>
+{% include 'ecom/recommended_products.html' %}
+
+<script>
+  var moreButton = document.getElementById('more-button');
+  var moreProducts = document.getElementById('more-products');
+
+  moreButton.addEventListener('click', function () {
+    moreProducts.style.display = 'block';
+    moreButton.style.display = 'none';
+  });
+</script>
+
+{% endblock content %}

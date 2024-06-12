@@ -1,0 +1,106 @@
+  .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 36px;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  font-weight: bold;
+  text-align: left;
+}
+
+.table td img {
+  display: block;
+  margin: 0 auto;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.cart-total {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.cart-total p {
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.cart-total .price {
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.cart-total a {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #5cb85c;
+  color: #fff;
+  text-decoration: none;
+}
+
+.cart-total a:hover {
+  background-color: #449d44;
+}
+.btn-danger {
+  padding: 8px 10px;
+   font-size: 12px;
+  background-color: #d9534f;
+      border-color: #d43f3a;
+    }
+
+    .btn-danger:hover {
+      background-color: #c9302c;
+      border-color: #ac2925;
+    }
+
+
+.upload-file {
+     background-color: #e67e22;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    padding: 13px 20px;
+  margin-top: 10px;
+  height: 43px;
+  border-left: 3px solid black;
+  cursor: pointer;
+  margin-left: 0px;
+    width: 60px;
+}
+
+input[type="file"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+}

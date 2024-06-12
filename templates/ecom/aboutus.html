@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %} 
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title> E-commerce SMI - About Us</title>
+   <link rel="stylesheet" type="text/css" href="/static/CSS/aboutus.css">
+   <link rel="shortcut icon" type="image/jpeg" href="{% static 'favicon/favicon.jpg' %}">
+
+</head>
+
+<body>
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+
+  <br><br><br>
+
+  <section class="team-member">
+    <img src="{% static '/memb/membre1.jpg' %}" alt="Member 1">
+    <h4>Khadija Benamar</h4>
+    <p>Khadija is the lead developer of Product Recommendation System. He is responsible for Implementing the recommendation system to enhance user experience and drive sales, using machine learning algorithms and data analysis.</p>
+  </section>
+
+  <section class="team-member">
+    <img src="{% static '/memb/membre2.jpg' %}" alt="Member 2">
+    <h4>Ibtissam Bensaid</h4>
+    <p>Ibtissam is the lead developer of the image recognition system in our website.Computer vision specialist who created the image recognition system integrated into our ecommerce website.</p>
+  </section>
+
+  <section class="team-member">
+    <img src="{% static '/memb/membre3.png' %}" alt="Member 3">
+    <h4>Nita Youssef</h4>
+    <p>Nita is theChat bot developer responsible for implementing conversational interfaces and integrating them into the website to improve user engagement and satisfaction.</p>
+  </section>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  {% include "ecom/footer.html" %}
+</body>
+
+</html>

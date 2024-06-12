@@ -1,0 +1,43 @@
+{% block css %}
+.logout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.logout-img {
+  width: 800px;
+  height: 100px;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.links a {
+  display: inline-block;
+  margin: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+.fa-facebook, .fa-twitter {
+  font-size: 24px;
+  color: #3b5998;
+  margin: 5px;
+}
+{% endblock css %}

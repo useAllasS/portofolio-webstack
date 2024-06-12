@@ -1,0 +1,38 @@
+{% load static %}
+{% block content %}
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/CSS/customer_home.css">
+  <link rel="shortcut icon" type="image/jpeg" href="{% static 'favicon/favicon.jpg' %}">
+
+</head>
+
+<div class="recommended-container">
+  <h2 class="recommended-heading"><b>Recommended Products</b></h2>
+  <div class="recommended-products">
+    {% for item in recommended_items|slice:":3" %}
+      {% for t in products %}
+      {% if t.id == item.product_id %}
+          <div class="recommended-product">
+            <a href="{% url 'product_detail' item.product_id %}">
+              <div class="recommended-product-image">
+                <img src="{% static t.product_image.url %}" alt="Product Image">
+              </div>
+            </a>
+            <div class="recommended-product-details">
+              <div class="recommended-product-name">{{ t.name }}</div>
+              <div class="recommended-product-price">${{ t.price }}</div>
+              <div class="recommended-product-add-to-cart">
+                <a href="{% url 'add-to-cart' item.product_id %}">
+                  <button class="add-to-cart-button">Add To Cart</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+      {% empty %}
+        <p>No recommended products found.</p>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

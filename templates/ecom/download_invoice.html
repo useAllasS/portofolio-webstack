@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <title>Download Invoice</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'CSS/download_invoice.css' %}">
+</head>
+
+<body>
+  <br><br><br>
+  <div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+      <tr class="top">
+        <td colspan="2">
+          <table class="table table-bordered table-striped">
+            <tr>
+              <td class="title">
+                <h5>Ecommerce Site - Django - SMI</h5>
+              </td>
+              <td>
+                Order Date: {{ orderDate }}<br>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="information">
+        <td colspan="2">
+          <table>
+            <tr>
+              <td>
+                Customer: <br>{{ customerName }}<br><br>
+                Customer Email:<br> {{ customerEmail }}
+              </td>
+              <td>
+                Contact Number:<br>
+                {{ customerMobile }}<br><br>
+                Shipment Address:<br> {{ shipmentAddress }}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="information">
+        <td colspan="2">
+          <table>
+            <tr>
+              <td>
+                Product Image:<br>
+                <img src="{{ productImage.url }}" alt="Product Image" height="40px" width="40px" /><br><br>
+                Product Price:<br>
+                ${{ productPrice }}
+              </td>
+              <td>
+                Product:<br> {{ productName }}<br><br>
+                Description:<br> {{ productDescription }}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="information">
+        <td colspan="2">
+          <table>
+            <tr>
+              <td>
+                Order Status:<br><br>
+                {{ orderStatus }}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+
+.panel-title {display: inline;font-weight: bold;}
+.checkbox.pull-right { margin: 0; }
+.pl-ziro { padding-left: 0px; }
+.paypal-button {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #003087;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.paypal-button:hover {
+  background-color: #002366;
+}

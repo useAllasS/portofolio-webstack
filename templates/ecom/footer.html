@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ecommerce SMI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-+V7zIjFFw5V7fW8rvE5YkOiGMbx/LxHrkGhS8/4yV/S2fSJdJgsOU3N4t4vhZtYFk4cxbDz0We9cqWVuhzPj0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="/static/CSS/footer.css">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/chatbot.css">
+  </head>
+
+  <body>
+    <div id="chatbot">
+      <div id="chatbot-container">
+        <div id="chatbot-header">
+          <h3>SMI ChatBot</h3>
+        </div>
+        <div id="chatbot-messages">
+          <!-- Chat message history goes here -->
+        </div>
+        <div id="chatbot-input">
+          <input type="text" id="user-input" name="message" placeholder="Type your message...">
+          <button id="send-button">Send</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="social-icons">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+        </div>
+        <div class="footer-text">
+          <p>&copy; 2023 Ecommerce Site. All rights reserved. Developed by <span>SMI S6 TRIO</span>.
+            <a href="/contactus" class="contact-link">Contact Us</a></p>
+        </div>
+      </div>
+      <div id="bot-response-container">
+        <!-- Bot response will be inserted here dynamically -->
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const chatContainer = document.getElementById('chatbot');
+        const messagesContainer = document.getElementById('chatbot-messages');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        sendButton.addEventListener('click', sendMessage);
+
+        function sendMessage() {
+          console.log('sendMessage called');
+          const message = userInput.value.trim();
+
+          if (message !== '') {
+            appendUserMessage(message);
+            userInput.value = '';
+
+console.log('Message:', message);
+// Send user message to the server
+fetch('/chatbot/chat/', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'X-CSRFToken': getCSRFToken()
+  },
+  body: JSON.stringify({ message: message })
+})
+  .then(response => response.json())
+  .then(data => handleBotResponse(data))
+  .catch(error => console.error('Error:', error));
+          }
+        }
+
+        function handleBotResponse(data) {
+          const botResponse = data.bot_response;
+          appendBotMessage(botResponse);
+        }
+
+        function appendUserMessage(message) {
+          const userMessage = createMessageElement(message, 'user-message');
+          messagesContainer.appendChild(userMessage);
+        }
+
+        function appendBotMessage(message) {
+          const botMessage = createMessageElement(message, 'bot-message');
+          messagesContainer.appendChild(botMessage);
+        }
+
+        function createMessageElement(message, className) {
+          const messageElement = document.createElement('div');
+          messageElement.classList.add(className);
+          messageElement.textContent = message;
+          return messageElement;
+        }
+
+        function getCSRFToken() {
+          const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+          return csrftoken;
+        }
+      });
+    </script>
+  </body>
+</html>

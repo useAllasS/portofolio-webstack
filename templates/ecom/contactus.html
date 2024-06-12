@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-commerce SMI</title>
+  <link rel="stylesheet" type="text/css" href="/static/CSS/contactus.css">
+  <link rel="shortcut icon" type="image/jpeg" href="{% static 'favicon/favicon.jpg' %}">
+
+</head>
+<body>
+  <header>
+    {% if request.user.is_authenticated %}
+      {% include "ecom/customer_navbar.html" %}
+    {% else %}
+      {% include "ecom/navbar.html" %}
+    {% endif %}
+  </header>
+  <main>
+    <section>
+      <h1>Send Us Your Valuable Feedback!</h1>
+      <form method="POST">
+        {% csrf_token %}
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    {% include "ecom/footer.html" %}
+  </footer>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

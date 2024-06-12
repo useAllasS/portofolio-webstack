@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F4F4F4;
+}
+
+/* Header styles */
+header {
+  background-color: #FFFFFF;
+  padding: 10px;
+}
+
+/* Main styles */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.jumbotron {
+  background-color: #FFFFFF;
+  padding: 30px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  font-size: 48px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.jumbotron p {
+  font-size: 24px;
+  color: #666666;
+  margin-bottom: 20px;
+}
+/* Button styles */
+.btn {
+  background-color: #007BFF;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #0069D9;
+}

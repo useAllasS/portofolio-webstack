@@ -1,0 +1,29 @@
+{% extends 'ecom/admin_base.html' %}
+{% load static %}
+{% block content %}
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/CSS/view_feedback.css">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<!--
+written By : SMI S6 TRIO
+
+-->
+
+<br><br><br><br>
+<h2 style="text-align:center; color:blue;">Feedbacks By User</h2>
+<hr>
+{%for f in feedbacks%}
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <strong>{{f.date}} ||By : {{f.name}} </strong><br> {{f.feedback}}
+</div>
+{%endfor%}
+<!--
+developed By : SMI S6 TRIO
+-->
+{% endblock content %}

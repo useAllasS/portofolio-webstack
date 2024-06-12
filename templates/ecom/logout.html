@@ -1,0 +1,22 @@
+{% extends 'ecom/homebase.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'CSS/logout.css' %}">
+</head>
+
+<div class="logout-container">
+  <img src="{% static 'images/giphy.gif' %}" alt="Logout image" class="logout-img-medium">
+  <h2>You have been successfully logged out.</h2>
+  <p>Thank you for using our website. We hope to see you soon!</p>
+  <div class="links">
+    <a href="{% url '' %}" class="btn btn-primary">Go to Home</a>
+    <a href="{% url 'customerlogin' %}" class="btn btn-primary">Log in again</a>
+  </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+{% endblock js %}

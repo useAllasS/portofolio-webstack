@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>E-commerce Login</title>
+      <link rel="stylesheet" type="text/css" href="/static/CSS/customerlogin.css">
+      <link rel="shortcut icon" type="image/jpeg" href="{% static 'favicon/favicon.jpg' %}">
+
+  </head>
+  <body>
+  {% if messages %}
+    <ul class="messages" style="font-weight: bold; color: #8811c5">
+        {% for message in messages %}
+            <li>{% if message.tags %} class="alert alert-success"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+    {% include "ecom/navbar.html" %}
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <form class="box" method="post">
+                  {% csrf_token %}
+                    <h1>Customer Login</h1>
+                               {% render_field form.username class="form-control" placeholder="Username" autocomplete="off" %}
+                               {% render_field form.password class="form-control" placeholder="Password" %}
+                     <input type="submit" name="" value="Login" >
+                    <a href="/customersignup" class="btn btn-primary">Signup</a>
+                    <a href="{% url 'customer_login' %}">
+                        <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" alt="Sign in with Google">
+
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+{% include "ecom/footer.html" %}
+  </body>
+</html>

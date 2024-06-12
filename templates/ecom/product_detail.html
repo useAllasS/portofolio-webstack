@@ -1,0 +1,124 @@
+{% extends 'ecom/homebase.html' %}
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'product_detail.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'image_zoom.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'product_reviews.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="product-detail">
+      <div class="row">
+        <!-- add hna comment lilta7t ga3 dyal image -->
+        <div class="col-md-6">
+          <div class="product-info">
+            <h2 class="product-title">{{ product.name }}</h2>
+            <p class="product-price">Price: ${{ product.price }}</p>
+            <div class="product-description">
+              <h3 class="section-title">Description:</h3>
+              <p>{{ product.description }}</p>
+            </div>
+            <div class="product-categories">
+              <h3 class="section-title">Categories:</h3>
+              <ul>
+                {% for category in product.categories.all %}
+                  <li>{{ category.name }}</li>
+                {% empty %}
+                  <li>No categories assigned.</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-like">Like</button>
+              <button class="btn btn-comment">Comment</button>
+              <button class="btn btn-add-to-cart">Add to Cart</button>
+            </div>
+            <div class="social-sharing">
+              <h3 class="section-title">Share this Product:</h3>
+              <!-- Facebook Share Button -->
+              <div class="fb-share-button" data-href="{{ product_url }}" data-layout="button_count" data-size="small">
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ product_url }}" class="fb-xfbml-parse-ignore">Share</a>
+              </div>
+              <!-- Twitter Share Button -->
+              <a href="https://twitter.com/intent/tweet?url={{ product_url }}&text={{ product.name }}&via=your-username" class="twitter-share-button">Tweet</a>
+            </div>
+            <div class="product-quantity">
+              <h3 class="section-title">Quantity:</h3>
+              <select name="quantity" id="quantity-select">
+                {% for qty in quantity_options %}
+                  <option value="{{ qty }}">{{ qty }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="product-rating">
+              <h3 class="section-title">Rate this Product:</h3>
+              <div class="rateyo"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-reviews">
+      <h3 class="section-title">Product Reviews:</h3>
+      <ul>
+        {% for review in product.reviews %}
+          <li>
+            <div class="review-info">
+              <div class="review-rating">
+                <div class="rateyo" data-rating="{{ review.rating }}"></div>
+              </div>
+              <p class="review-text">{{ review.review }}</p>
+              <p class="review-author">By: {{ review.author }}</p>
+            </div>
+          </li>
+        {% empty %}
+          <li>No reviews available.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+  <script src="{% static 'image_zoom.js' %}"></script>
+  <script src="{% static 'product_reviews.js' %}"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('.preview-image').imageZoom();
+
+      $(".rateyo").rateYo({
+        rating: 3.5,
+        fullStar: true,
+        onChange: function(rating, rateYoInstance) {
+          console.log("New rating: " + rating);
+        }
+      });
+
+      $(".rateyo-read-only").rateYo({
+        readOnly: true,
+        fullStar: true,
+        starWidth: "20px"
+      });
+
+      // Implement additional functionality for product reviews
+      // $(document).ready(function() {
+      //   Implement code to handle adding new reviews or ratings dynamically
+      //   You can use AJAX requests to send the review data to the server and update the reviews section
+      //   Implement code to handle submitting likes or comments on reviews
+      // });
+    });
+  </script>
+{% endblock %}
+
+
+<!--
+        <div class="col-md-6">
+          <div class="product-image">
+            <img src="{% static product.product_image %}" alt="{{ product.name }}" class="preview-image" data-zoom-image="{% static product.product_image %}">
+          </div>
+        </div>
+        -->

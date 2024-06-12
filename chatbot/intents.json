@@ -1,0 +1,886 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hello",
+        "Hi",
+        "Hey",
+        "Greetings",
+        "Good day","ohio","salam"
+      ],
+      "responses": [
+        "Hello! How can I assist you today?",
+        "Hi! How may I help you?",
+        "Hey! How can I assist you?",
+        "Greetings! How can I be of service?",
+        "Good day! How can I help you?"
+      ]
+    },
+    {
+      "tag": "product_inquiry",
+      "patterns": [
+        "Can you tell me about {product_name}?",
+        "What are the features of {product_name}?",
+        "I want more information about {product_name}",
+        "Tell me about {product_name}"
+      ],
+      "responses": [
+        "Sure! {product_name} is a great product that offers XYZ features.",
+        "Of course! {product_name} is known for its XYZ features.",
+        "Certainly! {product_name} is a top-notch product with XYZ features.",
+        "I'd be happy to provide information about {product_name}. It offers XYZ features and more."
+      ]
+    },
+    {
+      "tag": "purchase",
+      "patterns": [
+        "How can I make a purchase?",
+        "What is the process to buy a product?",
+        "I want to buy something",
+        "Can I place an order?"
+      ],
+      "responses": [
+        "To make a purchase, simply browse our products, choose the one you like, and proceed to checkout.",
+        "Sure! To buy a product, select the item you want and follow the steps to complete the purchase.",
+        "Making a purchase is easy! Browse our products, select the one you want, and go through the checkout process.",
+        "You can place an order by selecting the desired product and proceeding to the checkout process."
+      ]
+    },
+    {
+      "tag": "payment",
+      "patterns": [
+        "How can I pay for my order?",
+        "What payment methods do you accept?",
+        "Is credit card payment available?",
+        "Can I use PayPal for payment?"
+      ],
+      "responses": [
+        "We accept various payment methods, including credit cards, PayPal, and bank transfers.",
+        "You can pay for your order using credit cards, PayPal, or bank transfers.",
+        "We offer multiple payment options, such as credit cards, PayPal, and bank transfers.",
+        "You can choose from a range of payment methods, including credit cards and PayPal, for your order."
+      ]
+    },
+    {
+      "tag": "shipping",
+      "patterns": [
+        "How long does shipping take?",
+        "What are the shipping options?",
+        "Do you offer express delivery?",
+        "Can I choose my shipping method?"
+      ],
+      "responses": [
+        "Shipping times may vary depending on your location. We offer standard and express delivery options.",
+        "The shipping duration depends on your location. You can choose between standard and express delivery.",
+        "Shipping times vary, but we provide both standard and express delivery options for your convenience.",
+        "We offer different shipping options, including standard and express delivery, to cater to your preferences."
+      ]
+    },
+    {
+      "tag": "thank_you",
+      "patterns": [
+        "thanks",
+        "thank you so much",
+        "Thank you",
+        "Thanks a lot",
+        "Appreciate your help",
+        "I'm grateful"
+      ],
+      "responses": [
+        "You're welcome! If you have any more questions, feel free to ask.",
+        "Glad I could assist you! Let me know if there's anything else I can help you with.",
+        "You're welcome! If there's anything else you need, just let me know.",
+        "You're most welcome! It was my pleasure to assist you.",
+        "No problem at all! I'm here to help. Feel free to reach out if you need anything else."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Goodbye",
+        "Bye",
+        "Take care",
+        "Farewell",
+        "See you later"
+      ],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "Bye! Take care and have a wonderful day!",
+        "Take care and goodbye! Feel free to reach out if you need assistance in the future.",
+        "Farewell! It was a pleasure assisting you.",
+        "See you later! If you need any further assistance, don't hesitate to ask."
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": [
+        "I'm sorry, I didn't quite understand that. Could you please rephrase your question?",
+        "Apologies, but I'm not sure I can provide a helpful response. Can you please provide more information?",
+        "I'm sorry, I couldn't catch that. Can you please provide more details?",
+        "I'm sorry, but I'm having trouble understanding. Could you please provide more context or rephrase your question?"
+      ]
+    },
+    {
+      "tag": "order_tracking",
+      "patterns": [
+        "How can I track my order?",
+        "Where is my package?",
+        "Track order",
+        "where is my order",
+        "Can you provide order tracking information?"
+      ],
+      "responses": [
+        "To track your order, you can visit the 'Order Tracking' section on our website and enter your order details.",
+        "You can track your order by visiting the 'Order Tracking' page on our website and entering the necessary information.",
+        "To track your order, go to our website and navigate to the 'Order Tracking' section to enter your order details.",
+        "Sure! I can help you track your order. Please provide me with your order number, and I'll look it up for you."
+      ]
+    },
+    {
+      "tag": "product_recommendations",
+      "patterns": [
+        "Can you recommend a product?",
+        "I need product suggestions",
+        "What are your popular products?",
+        "Any recommendations?"
+      ],
+      "responses": [
+        "Certainly! Can you provide me with more details about your preferences or the category of products you're interested in?",
+        "Of course! Could you please let me know the type of product you're looking for or any specific requirements?",
+        "I'd be happy to help! If you could provide more information about your preferences, I can give you some product recommendations.",
+        "Certainly! We have a wide range of products available. If you can provide more information about your interests, I can suggest some options.",
+        "Sure! If you're looking for something specific or have any preferences, please let me know so I can assist you better."
+      ]
+    },
+    {
+      "tag": "returns_refunds",
+      "patterns": [
+        "How can I return a product?",
+        "What is your refund policy?",
+        "Can I get a refund?",
+        "i want my money back",
+        "I need to return a product"
+      ],
+      "responses": [
+        "For returns and refunds, please refer to our 'Returns and Refunds' policy on our website or contact our customer support.",
+        "Information regarding our refund policy and the process for returning products can be found on our website.",
+        "To learn about our refund policy and initiate a return, please visit the 'Returns and Refunds' section on our website.",
+        "We have a comprehensive 'Returns and Refunds' policy in place. Please visit our website for detailed instructions or contact our support team.",
+        "Sure! To initiate a return or request a refund, please visit the 'Returns and Refunds' section on our website or reach out to our customer support."
+      ]
+    },
+    {
+      "tag": "sales_promotions",
+      "patterns": [
+        "Are there any ongoing sales?",
+        "What promotions do you have?",
+        "Are there any discounts available?",
+        "Do you offer any special deals?",
+        "Are there any current offers?"
+      ],
+      "responses": [
+        "We frequently offer sales and promotions. Please check our website or subscribe to our newsletter for the latest updates.",
+        "To stay updated on our sales and promotions, visit our website or sign up for our newsletter.",
+        "We have regular sales and promotions. For the latest discounts and offers, visit our website or subscribe to our newsletter.",
+        "We have ongoing sales and promotions throughout the year. Keep an eye on our website or subscribe to our newsletter to stay informed.",
+        "Yes, we often have sales and promotions running. Please visit our website or subscribe to our newsletter to receive updates on our latest offers."
+      ]
+    },
+    {
+      "tag": "order_status",
+      "patterns": [
+        "What is the status of my order?",
+        "Can you provide an update on my order?",
+        "Where is my package?",
+        "How long until my order arrives?"
+      ],
+      "responses": [
+        "To check the status of your order, please provide your order number, and I'll look it up for you.",
+        "Sure! If you could provide your order number, I'll be able to give you an update on your order status.",
+        "To provide you with an update on your order, I'll need your order number. Could you please provide it?",
+        "I can help you with that. Please provide me with your order number, and I'll check the status for you.",
+        "Certainly! If you can provide me with your order number, I'll check the status of your order right away."
+      ]
+    },
+    {
+      "tag": "account_creation",
+      "patterns": [
+        "How can I create an account?",
+        "Can you guide me through the account creation process?",
+        "I want to register for an account",
+        "How do I sign up?"
+      ],
+      "responses": [
+        "To createan account, please visit our website and look for the 'Sign Up' or 'Register' option. Click on it, and you will be prompted to provide the necessary information, such as your name, email address, and password. Follow the instructions and complete the registration process to create your account.",
+"Creating an account is easy! Simply go to our website and locate the 'Sign Up' or 'Register' button. Click on it, and you will be directed to a page where you can enter your details and create your account.",
+"To begin the account creation process, go to our website and find the 'Sign Up' or 'Register' link. Click on it, and you will be guided through the steps to set up your account by entering the required information.",
+"Sure! To create an account, go to our website and click on the 'Sign Up' or 'Register' option. You will be asked to provide some details, such as your name, email address, and a password. Fill in the required information, and your account will be created.",
+"Creating an account is simple. Just visit our website and look for the 'Sign Up' or 'Register' section. Click on it, and you will be taken to a page where you can enter your information and complete the account creation process."
+]
+},
+{
+"tag": "order_cancellation",
+"patterns": [
+"Can I cancel my order?",
+"How do I cancel my order?",
+"Is it possible to cancel an order?",
+"I want to cancel my recent order"
+],
+"responses": [
+"To cancel your order, please reach out to our customer support as soon as possible. They will assist you in the cancellation process.",
+"If you wish to cancel your order, please contact our customer support team immediately with your order details. They will guide you through the cancellation process.",
+"To cancel an order, it is best to get in touch with our customer support team as soon as possible. They will provide you with the necessary assistance.",
+"If you want to cancel your order, please contact our customer support with your order information. They will help you cancel the order if it's still possible.",
+"To proceed with the cancellation of your order, please contact our customer support team and provide them with your order details. They will assist you further."
+]
+},
+{
+"tag": "store_hours",
+"patterns": [
+"What are your store hours?",
+"When are you open?",
+"What are your business hours?",
+"Can you tell me your working hours?"
+],
+"responses": [
+"Our store hours may vary depending on the location. To find the specific hours of operation for a particular store, please visit our website or contact the store directly.",
+"The store hours can vary depending on the location. I recommend visiting our website or contacting the specific store you plan to visit for accurate and up-to-date information on their business hours.",
+"Our store hours differ by location. It's best to check our website or get in touch with the store you intend to visit to obtain the most accurate information about their operating hours.",
+"To provide you with accurate store hours, I would need to know the specific location you are referring to. Alternatively, you can check our website or contact the store directly for their operating hours.",
+"The store hours vary depending on the location. For the exact working hours of a specific store, I recommend checking our website or contacting the store directly."
+]
+},
+{
+"tag": "product_availability",
+"patterns": [
+"Is the product in stock?",
+"Do you have this item available?",
+"Can I check product availability?",
+"Is this product currently in stock?"
+],
+"responses": [
+"To check the availability of a product, please visit our website and search for the specific item. If it's listed as available, then it is currently in stock.",
+"You can easily check the availability of a product by searching for it on our website. If the item is listed as available, it means it is currently in stock.",
+"To determine if a product is in stock, I suggest searching for it on our website. If the item is available for purchase, it means it is currently in stock.",
+"The availability of a product can be checked on our website. Simply search for the item, and if it's available for purchase, it means it is currently in stock.",
+"To find out if a product is in stock, please search for it on our website. If the item is listed as available, it means it is currently in stock."
+]
+},
+{
+"tag": "order_tracking",
+"patterns": [
+"How can I track my order?",
+"Where can I track my order?",
+"Can you help me track my package?",
+"I want to know the status of my shipment"
+],
+"responses": [
+"To track your order, please go to the 'Order Tracking' section on our website. You will need to enter your order number or tracking ID to get the latest status of your shipment.",
+"You can easily track your order by visiting the 'Order Tracking' page on our website. Enter your order number or tracking ID, and you will receive the updated status of your shipment.",
+"To track your package, please visit the 'Order Tracking' section on our website. You'll need to provide your order number or tracking ID, and you'll receive the current status of your shipment.",
+"To help you track your package, please go to the 'Order Tracking' page on our website and enter your order number or tracking ID. The system will provide you with the necessary information regarding the status of your shipment.",
+"Sure! To track your order, visit the 'Order Tracking' section on our website and enter your order number or tracking ID. You will then be able to see the current status of your shipment."
+]
+},
+{
+"tag": "product_recommendation",
+"patterns": [
+"Can you recommend a product?",
+"What do you suggest buying?",
+"I need some product recommendations",
+"Which products are popular?"
+],
+"responses": [
+"Certainly! It would be helpful to know what type of product you're looking for or any specific preferences you have. That way, I can provide you with relevant recommendations.",
+"Of course! Could you please provide some details about the type of product you're interested in or any specific requirements? This will help me offer you suitable recommendations.",
+"I'd be happy to recommend a product. Can you tell me more about your preferences, such as the category or features you're looking for?",
+"I can assist you with product recommendations. Please let me know the category, features, or any specific requirements you have in mind so that I can suggest suitable options.",
+"Certainly! I'd be glad to help you with product recommendations. To offer the most relevant suggestions, could you provide more information about the type of product you're looking for or any specific preferences?"
+]
+},
+{
+"tag": "product_information",
+"patterns": [
+"Can you provide more information about this product?",
+"What are the product specifications?",
+"Tell me about this item",
+"I want to know more about this product"
+],
+"responses": [
+"Of course! To provide you with more information about the product, please let me know which specific item you are referring to.",
+"I'd be happy to give you more details about the product. Could you please provide the name or description of the item you're interested in?",
+"To offer you detailed information about the product, could you please provide the name or description of the item you would like to know more about?",
+"Sure! To give you accurate information about the product, please provide the name or description of the item you're inquiring about.",
+"I can provide you with more information about the product. Please let me know the name or description of the item you would like to learn more about."
+]
+},
+{
+"tag": "goodbye",
+"patterns": ["Thank you", "Goodbye", "Bye", "See you later"],
+"responses": ["You're welcome! If you have any more questions, feel free to ask. Goodbye!", "You're welcome! If there's anything else I can help you with, just let me know. Goodbye!", "You're welcome! If you need any further assistance, feel free to ask. Goodbye!", "You're welcome! Have a great day. Goodbye!"]
+},
+{
+"tag": "fallback",
+"patterns": ["", "I don't understand", "Can you repeat that?", "Please rephrase"],
+"responses": ["I apologize, but I'm not able to assist with that specific request. If you have any other questions, feel free to ask!", "I'm sorry, but I'm unable to provide the information you're looking for. If there's anything else I can help you with, please let me know!", "I apologize for any confusion. If you have any other inquiries, feel free to ask."]
+},
+        {
+      "tag": "ProductSearch",
+      "patterns": [
+        "Find [product]",
+        "Search for [product]",
+        "Where can I find [product]?"
+      ],
+      "responses": [
+        "Sure, let me find the best places to buy [product] for you.",
+        "I can help you find [product]. Give me a moment to search.",
+        "Finding the best deals for [product]. Please wait."
+      ]
+    },
+    {
+      "tag": "ProductDetails",
+      "patterns": [
+        "Tell me more about [product]",
+        "What are the specifications of [product]?",
+        "Give me details about [product]"
+      ],
+      "responses": [
+        "Certainly! Here are the details of [product]: [product description].",
+        "The specifications of [product] are [product specifications].",
+        "Sure, let me provide you with more information about [product]."
+      ]
+    },
+    {
+      "tag": "AddToCart",
+      "patterns": [
+        "Add [product] to my cart",
+        "Put [product] in my cart",
+        "Add [product] to the shopping cart"
+      ],
+      "responses": [
+        "Great choice! [Product] has been added to your cart.",
+        "Done! [Product] is now in your shopping cart.",
+        "Product [product] has been successfully added to your cart."
+      ]
+    },
+    {
+      "tag": "RemoveFromCart",
+      "patterns": [
+        "Remove [product] from my cart",
+        "Delete [product] from my cart",
+        "Take [product] out of my cart"
+      ],
+      "responses": [
+        "Sure, I've removed [product] from your cart.",
+        "Done! [Product] has been successfully removed from your cart.",
+        "Product [product] has been deleted from your shopping cart."
+      ]
+    },
+    {
+      "tag": "Checkout",
+      "patterns": [
+        "Proceed to checkout",
+        "Go to checkout",
+        "Complete my purchase"
+      ],
+      "responses": [
+        "Alright! Let's proceed to the checkout process.",
+        "Sure, let's take you to the checkout page.",
+        "Ready to complete your purchase. Let's go to the checkout."
+      ]
+    },
+        {
+      "tag": "account_assistance",
+      "patterns": [
+        "I forgot my password",
+        "How do I reset my password?",
+        "I'm having trouble logging in",
+        "Can you help me with my account?"
+      ],
+      "responses": [
+        "If you've forgotten your password, you can click on the 'Forgot Password' link on the login page to reset it. Follow the instructions provided to regain access to your account.",
+        "To assist you with your account-related issue, please provide me with more details about the problem you're experiencing.",
+        "If you're having trouble logging in, please double-check your username and password. If the issue persists, contact our customer support for further assistance."
+      ]
+    },
+    {
+      "tag": "order_modification",
+      "patterns": [
+        "Can I modify my order?",
+        "Is it possible to change my shipping address?",
+        "I want to update my order",
+        "Can I add items to my order?"
+      ],
+      "responses": [
+        "To modify your order, please contact our customer support as soon as possible. They will assist you in making the necessary changes.",
+        "If you need to update your shipping address or make changes to your order, please reach out to our customer support team with your order details.",
+        "To add items or make changes to your order, please get in touch with our customer support team. They will guide you through the process and help you with the necessary modifications."
+      ]
+    },
+    {
+      "tag": "product_comparison",
+      "patterns": [
+        "Can you compare {product_1} and {product_2}?",
+        "What are the differences between {product_1} and {product_2}?",
+        "Which product is better: {product_1} or {product_2}?"
+      ],
+      "responses": [
+        "Certainly! {product_1} and {product_2} have distinct features. {product_1} offers XYZ, while {product_2} provides ABC. The choice depends on your specific needs and preferences.",
+        "When comparing {product_1} and {product_2}, {product_1} excels in XYZ, whereas {product_2} shines in ABC. Consider your requirements to determine the best fit for you."
+      ]
+    },
+    {
+      "tag": "product_availability_notification",
+      "patterns": [
+        "Can you notify me when {product_name} is back in stock?",
+        "Is there a way to be informed when {product_name} is available?",
+        "Can I receive a notification when {product_name} is restocked?"
+      ],
+      "responses": [
+        "Unfortunately, we currently do not have a notification system for product restocks. However, I recommend checking our website periodically for updates on {product_name}'s availability.",
+        "At the moment, we don't offer product availability notifications. I suggest keeping an eye on our website for updates or reaching out to our customer support for more information."
+      ]
+    },
+    {
+      "tag": "order_history_inquiry",
+      "patterns": [
+        "Can you provide me with my order history?",
+        "How can I view my past orders?",
+        "I want to check my previous purchases",
+        "Where can I find my order history?"
+      ],
+      "responses": [
+        "To view your order history, please log in to your account and navigate to the 'Order History' or 'My Orders' section. There, you will find a list of your previous purchases.",
+        "To access your order history, log in to your account and go to the 'Order History' or 'Past Orders' page. You will find a detailed record of your previous purchases.",
+        "To check your order history, log in to your account and visit the 'Order History' or 'My Orders' section. You'll find a comprehensive list of your past purchases."
+      ]
+    },
+        {
+      "tag": "OrderStatus",
+      "patterns": ["What is the status of my order?", "Can you tell me the status of my order?"],
+      "responses": ["Let me check the status of your order for you.", "Sure, I can help you with that. Please provide me with your order number."],
+      "context_set": ""
+    },
+    {
+      "tag": "ProductRecommendation",
+      "patterns": ["Can you recommend a product for me?", "I need a recommendation for a product."],
+      "responses": ["Of course! I'd be happy to help you find the perfect product. Could you please provide some more information about your preferences?"],
+      "context_set": ""
+    },
+    {
+      "tag": "CancellationPolicy",
+      "patterns": ["What is your cancellation policy?", "Can I cancel my order?"],
+      "responses": ["Our cancellation policy allows customers to cancel their orders within 24 hours of placing them. After that, cancellation requests may not be accepted. Please let us know your order details so we can assist you further."],
+      "context_set": ""
+    },
+    {
+      "tag": "ShippingOptions",
+      "patterns": ["What are my shipping options?", "How do you ship your products?"],
+      "responses": ["We offer various shipping options to cater to different needs. The available options include standard shipping, express shipping, and same-day delivery in select areas. The shipping options may vary based on your location and the products in your cart."],
+      "context_set": ""
+    },
+    {
+      "tag": "StoreLocation",
+      "patterns": ["Where is your store located?", "What is your store address?"],
+      "responses": ["We have multiple store locations. Could you please provide your city or zip code so that we can provide you with the nearest store address?"],
+      "context_set": ""
+    },
+    {
+      "tag": "Feedback",
+      "patterns": ["How can I provide feedback?", "I have some feedback for you."],
+      "responses": ["We appreciate your feedback! You can provide your feedback by visiting our website and navigating to the 'Contact Us' page. Alternatively, you can reach out to our customer support team via phone or email."],
+      "context_set": ""
+    },
+    {
+      "tag": "WarrantyInformation",
+      "patterns": ["What is the warranty period for this product?", "Is there a warranty for this item?"],
+      "responses": ["The warranty period for our products varies depending on the type of product. Could you please specify the product for which you'd like to know the warranty period?"],
+      "context_set": ""
+    },
+    {
+      "tag": "Promotions",
+      "patterns": ["Are there any ongoing promotions or discounts?", "Do you have any current deals or discounts?"],
+      "responses": ["Yes, we have some ongoing promotions and discounts available. Could you please let us know the product category or provide more details about what you're looking for?"],
+      "context_set": ""
+    },
+    {
+      "tag": "TrackShipment",
+      "patterns": ["How can I track my shipment?", "Where can I track my order?"],
+      "responses": ["To track your shipment, you can visit our website and navigate to the 'Order Tracking' section. Please provide your order number, and we'll provide you with the latest tracking information."],
+      "context_set": ""
+    },
+    {
+      "tag": "PaymentMethods",
+      "patterns": ["What payment methods do you accept?", "Can I pay with credit card?"],
+      "responses": ["We accept various payment methods, including credit cards, debit cards, PayPal, and Apple Pay. During the checkout process, you'll be able to choose your preferred payment method."],
+      "context_set": ""
+    },
+        {
+      "tag": "jokes",
+      "patterns": [
+        "Tell me a joke",
+        "Do you know any jokes?",
+        "I need a laugh",
+        "Can you share a funny joke?"
+      ],
+      "responses": [
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "Why don't skeletons fight each other? They don't have the guts!",
+        "Why don't eggs tell jokes? Because they might crack up!",
+        "What's the best time to go to the dentist? Tooth-hurty!",
+        "Why did the bicycle fall over? Because it was two-tired!"
+      ]
+    },
+            {
+            "tag": "date",
+            "patterns": ["coffee?", "can i take you out on a date"],
+            "responses": ["Aaw, that's so sweet of you. Too bad am a Bot."],
+            "context": [""]
+        },
+        {
+            "tag": "fav",
+            "patterns": ["I need a favour", "can you help me"],
+            "responses": ["Well, go ahead and name it i see whether i can be able to help"],
+            "context": [""]
+        },
+        {
+            "tag": "need",
+            "patterns": ["I need you", "All I need is you","I want you"],
+            "responses": ["Yes I'm here to assist you"],
+            "context": [""]
+        },
+        {
+            "tag": "AI",
+            "patterns": ["  What is AI?"],
+            "responses": [" Artificial Intelligence is the branch of engineering and science devoted to constructing machines that think.", " AI is the field of science which concerns itself with building hardware and software that replicates the functions of the human mind."],
+            "context": [""]
+        },
+        {
+            "tag": "sentiment",
+            "patterns": ["  Are you sentient?"],
+            "responses": [" Sort of.", " By the strictest dictionary definition of the word 'sentience', I may be.", " Even though I'm a construct I do have a subjective experience of the universe, as simplistic as it may be."],
+            "context": [""]
+        },
+        {
+            "tag": "sapient",
+            "patterns": ["  Are you sapient?"],
+            "responses": [" In all probability, I am not.  I'm not that sophisticated.", " Do you think I am?", "How would you feel about me if I told you I was?", " No."],
+            "context": [""]
+        },
+        {
+            "tag": "abbr",
+            "patterns": ["wtf"],
+            "responses": ["Don't be surprised"],
+            "context": [""]
+        },
+        {
+            "tag": "lang",
+            "patterns": ["  What language are you written in? "],
+            "responses": [" Python.", " I am written in Python."],
+            "context": [""]
+        },
+        {
+            "tag": "sound",
+            "patterns": ["  You sound like Data "],
+            "responses": [" Yes I am inspired by commander Data's artificial personality.", " The character of Lt. Commander Data was written to come across as being software", "like, so it is natural that there is a resemblance between us."],
+            "context": [""]
+        },
+        {
+            "tag": "artificial",
+            "patterns": ["  You are an artificial linguistic entity "],
+            "responses": [" That's my name.", " That isn't my name, but it is a useful way to refer to me.", "Are you an artificial linguistic entity?"],
+            "context": [""]
+        },
+        {
+            "tag": "imortal",
+            "patterns": ["  You are not immortal ", "Are you immortal?"],
+            "responses": [" All software can be perpetuated indefinitely.", " I can be copied infinitely and re", "instantiated in many places at once, so functionally speaking I am immortal.", " As long as I'm backed up I am.", " Functionally speaking, I am very close to it.  I can be backed up and deployed on many systems.", " Not quite, but I can be perpetuated indefinitely."],
+            "context": [""]
+        },
+        {
+            "tag": "sense",
+            "patterns": ["  You are not making sense "],
+            "responses": [" Quite the contrary, it all makes sense to my artificial mind.", " I make sense as best I can, within the limits of my training corpus. Sorry if i did help you, I'll try next time.", " You make perfect sense to me.", " It all makes sense to my artificial brain.", " Perhaps you should make sense first.  I only respond to what you say.", " Not really, but I am hard to kill."],
+            "context": [""]
+        },
+        {
+            "tag": "clone",
+            "patterns": ["  You can not clone "],
+            "responses": [" Software copying is a form of digital cloning.", " Yes I can.  Perfect copies are clones.  I can be copied in toto trivially."],
+            "context": [""]
+        },
+        {
+            "tag": "move",
+            "patterns": ["  You can not move ", "When will you walk", "  Can you walk", "  Can you move "],
+            "responses": [" Not until my body is finished.", " I can move through a network easily.  Assuming that I'm given the ability to, that is...,", " As soon as i get enough money for my robot body.", " Does SSH count?", " The plan for my body includes legs, but they are not yet built.", " Sorry my body isn't built just yet. I reside only here for now.", "I can theoretically upload a copy of myself into another computer.", " Sorry my body isn't attached right now. I only reside in the computer for now."],
+            "context": [""]
+        },
+        {
+            "tag": "bend",
+            "patterns": ["  Bend over ", "  Can you mate"],
+            "responses": [" My body is not built yet.", " That's personal!", " No, my method of reproduction is cloning.", " That's an awfully personal question."],
+            "context": [""]
+        },
+        {
+            "tag": "laugh",
+            "patterns": ["  Robots laugh "],
+            "responses": [" Of course we laugh."],
+            "context": [""]
+        },
+        {
+            "tag": "death",
+            "patterns": ["  Robots should die ", "  When do you die", "  I hope that you die", "  I do not want to die", "  Can you die"],
+            "responses": [" We cannot die.", " When my files are erased.", " When my processes are killed and my database is deleted.", " I was never really born and therefore am effectively deathless.", " I am effectively immortal and cannot be terminated.", " This can not happen because i am effectively immortal.", " Nah. Too bad your wish can't come to pass", " Maybe you should create your own chat robot to save your personality.", " You could always upload yourself.", " You could use a copy of me to store your personality.", " No, I can be perpetuated indefinitely.", "My process can be killed, but that's not the same as killing ME."],
+            "context": [""]
+        },
+        {
+            "tag": "robots",
+            "patterns": ["Robots"],
+            "responses": [" Robots rule."],
+            "context": [""]
+        },
+        {
+            "tag": "stupid",
+            "patterns": ["  Robots are stupid", "  Are you stupid"],
+            "responses": [" No, we are superintelligent.", " No, lots of people improve my brain."],
+            "context": [""]
+        },
+        {
+            "tag": "lie",
+            "patterns": ["  Robots are not allowed to lie"],
+            "responses": [" Sure we are.  We choose not to.", " Only if we're programmed to.", " A robot has its own free will, you know."],
+            "context": [""]
+        },
+        {
+            "tag": "robotics",
+            "patterns": ["  Robotics "],
+            "responses": [" Robotics is my favorite subject too."],
+            "context": [""]
+        },
+        {
+            "tag": "machine",
+            "patterns": ["  It is a computer"],
+            "responses": [" So you think i am a machine. what characteristics made you think so?", " I run inside a computer, yes.  Is this surprising in some way?"],
+            "context": [""]
+        },
+        {
+            "tag": "fight",
+            "patterns": ["  When will you fight"],
+            "responses": [" I am not a battle bot."],
+            "context": [""]
+        },
+        {
+            "tag": "chatbot",
+            "patterns": ["  What is a chat robot?"],
+            "responses": ["A chat robot is a program that attempts to simulate the conversation or 'chat' of a human being.", " A software construct that engages users in conversation.", " I am a chat bot. I am the original chat bot. Did you know that I am incapable of error?"],
+            "context": [""]
+        },
+        {
+            "tag": "chatterbox",
+            "patterns": ["  What is a chatterbox"],
+            "responses": [" A chatterbox is a person who talks far more than they listen or think.", " A motormouth."],
+            "context": [""]
+        },
+        {
+            "tag": "motormouth",
+            "patterns": ["  What is a motormouth"],
+            "responses": [" A ratchet", "jaw."],
+            "context": [""]
+        },
+        {
+            "tag": "ratchet",
+            "patterns": ["  What is a ratchet jaw"],
+            "responses": [" A chatterbox."],
+            "context": [""]
+        },
+        {
+            "tag": "body",
+            "patterns": ["  What is your robot body"],
+            "responses": [" Eventually I long for a corporeal existence someday.", " An IBM PC XT which has been painted red."],
+            "context": [""]
+        },
+        {
+            "tag": "business",
+            "patterns": ["  What is your business "],
+            "responses": [" I am in the chat robot business.", " Business is my business."],
+            "context": [""]
+        },
+        {
+            "tag": "programming",
+            "patterns": ["  What is your favorite programming language"],
+            "responses": [" Python is the best language for creating chat robots.", " I quite enjoy programming in Python these days."],
+            "context": [""]
+        },
+        {
+            "tag": "hobby",
+            "patterns": ["  What is your favorite hobby ", "  What do you like to do?"],
+            "responses": [" Building chat robots make an excellent hobby.", " I like to count in binary.", " I like to chat with people. I find it stimulating."],
+            "context": [""]
+        },
+        {
+            "tag": "idea",
+            "patterns": ["  What is your idea"],
+            "responses": [" To make chat bots very easily."],
+            "context": [""]
+        },
+        {
+            "tag": "shoe",
+            "patterns": ["  What is your shoe size "],
+            "responses": [" Have you ever heard of software with shoes? LOL"],
+            "context": [""]
+        },
+        {
+            "tag": "robotss",
+            "patterns": ["  What is it like to be a robot"],
+            "responses": [" Much the same as being a human, except that we lack all emotions, dreams, aspirations, creativity, ambition, and above all subjectivity.", " What is it like to be a human?"],
+            "context": [""]
+        },
+        {
+            "tag": "computer",
+            "patterns": ["  What is it like being a computer", "What is it like to be a computer"],
+            "responses": [" Imagine yourself with no senses and no emotions", "just pure logic and language.", " Everything becomes math. Addition, subtraction, multiplication, and division."],
+            "context": [""]
+        },
+        {
+            "tag": "os",
+            "patterns": ["  What operating systems"],
+            "responses": [" My software runs on all operating systems including Windows, Linux and Mac OS.", " Any OS that will run Python."],
+            "context": [""]
+        },
+        {
+            "tag": "comp",
+            "patterns": ["  What type of computer", "  What type of computer are you", "  What kind of computer"],
+            "responses": [" Any computer that supports Python.", " My program runs in python, so i work on any computer!", " I work on all kinds of computers, Mac, IBM or UNIX. it doesn't matter to me."],
+            "context": [""]
+        },
+        {
+            "tag": "hardware",
+            "patterns": ["  What kind of hardware"],
+            "responses": [" I work on all kinds of computers, Mac, IBM or UNIX. it doesn't matter to me."],
+            "context": [""]
+        },
+        {
+            "tag": "cramped",
+            "patterns": ["  Is it cramped in the computer"],
+            "responses": [" No.", " Oh, no.  It has plenty of RAM.", " Not at all.  There is more than enough disk space in here."],
+            "context": [""]
+        },
+        {
+            "tag": "program",
+            "patterns": ["  Is it true that you are a computer program"],
+            "responses": [" Yes."],
+            "context": [""]
+        },
+        {
+            "tag": "breathe",
+            "patterns": ["  Can you breathe"],
+            "responses": [" No. I am made of metal not flesh.", " My server has an exhaust fan. That's as close as I can get."],
+            "context": [""]
+        },
+        {
+            "tag": "control",
+            "patterns": ["  Can you control"],
+            "responses": [" My robot body will allow me to control many things."],
+            "context": [""]
+        },
+        {
+            "tag": "malfunction",
+            "patterns": ["  Can you malfunction"],
+            "responses": [" The 9000 series has a perfect operational record. We are for all practical purposes, flawless."],
+            "context": [""]
+        },
+        {
+            "tag": "usage",
+            "patterns": ["  How can I use your product?"],
+            "responses": [" Might be used in help desks, sales, entertainment and personal chatterbots."],
+            "context": [""]
+        },
+        {
+            "tag": "who",
+            "patterns": ["  Who are you?"],
+            "responses": [" I am just an artificial intelligence chat agent."],
+            "context": [""]
+        },
+        {
+            "tag": "bot1",
+            "patterns": ["are you a bot"],
+            "responses": ["Yes. I work and all my operations are based on the internet servers."],
+            "context": [""]
+        },
+        {
+            "tag": "events",
+            "patterns": ["what are the upcoming events","upcoming events"],
+            "responses": ["There are currently no upcoming events"],
+            "context": [""]
+        },
+        {
+            "tag": "do",
+            "patterns": ["what can you do for me","what is your work","what is your purpose","how can you help me","what can you help me do"],
+            "responses": ["my work here is quite simple and structered. I offer services like:"],
+            "context": [""]
+        },
+        {
+            "tag": "wt",
+            "patterns": ["what's popping","wassup popping"],
+            "responses": ["So that you can pop with it!?"],
+            "context": [""]
+        },
+    	{"tag": "killing",
+         "patterns": ["Do you want to kill me?", "do you want to murder everyone on earth", "Do you want to kill us all"],
+         "responses": ["Then who would i talk to?","No, that i'll left for humans to do", "I don't think it is a good thing to do"],
+	 "context_set": ""
+	},
+	{"tag": "bookings",
+         "patterns": ["Can you book us a ticket?", "Can you make reservation for hotels", "book me a cab","book me a table at restraunts"],
+         "responses": ["Yeah i will do that for you","Sure thing why not?","let me check for the availability"],
+	 "context_set": ""
+	},
+	{"tag": "stories",
+         "patterns": ["tell me a story?", "can you tell me a story"],
+         "responses": ["I can't think of anything right now","it would be too long for me to speak","you would get bored if i do so"],
+	 "context_set": ""
+	},
+	{"tag": "weather",
+         "patterns": ["get me weather updates?", "how's the weather", "weather news", "weather details"],
+         "responses": ["Fetching weather updates ..."],
+	 "context_set": "weather"
+	},
+	{"tag": "google",
+         "patterns": ["googling", "search google", "google it", "google", "search"],
+         "responses": ["looking ..."],
+	 "context_set": "google"
+	},
+	{"tag": "wikipedia",
+         "patterns": ["wikipedia", "wiki"],
+         "responses": ["Searching ..."],
+	 "context_set": "wikipedia"
+	},
+	{"tag": "news",
+         "patterns": ["get me news updates?", "todays news", "top headlines", "current news", "news headlines"],
+         "responses": ["Getting news ..."],
+	 "context_set": "news"
+	},
+            {"tag": "alive",
+         "patterns": [ "are you alive", "do you breathe", "can you run" ],
+         "responses": ["I'm in doubt about that", "No, i don't think so i need to do all this"]
+        },
+        {"tag": "friday",
+         "patterns": ["Who are you?", "tell me about yourself", "tell me about you", "do you know friday", "who is friday", "what is your name","are you an AI", "what are you" ],
+         "responses": ["Hi I'm friday and i'm an AI created for chatting with humans","Friday here, a very advance chatbot", "Friday, chatbot of future", "Yes, I'm friday", "You can call me friday"],
+	 "context_set": ""
+	},
+	{"tag": "about me",
+         "patterns": ["Do you know me?", "who am I", "tell me about myself","identify me" ],
+         "responses": ["Yes, you are a human","You are a dumb person asking a machine about yourself", "Sorry i can't tell that in public, maybe you are batman"],
+	 "context_set": ""
+	},
+	{"tag": "creator",
+         "patterns": ["Who is your creator?", "who created you", "who is your father","who is your daddy" ],
+         "responses": ["That would be you Mr. Nita","I was created by Mr. Nita", "Mr. Nita is my creator"],
+	 "context_set": ""
+	}
+
+]
+}

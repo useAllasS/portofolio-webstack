@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> E-commerce SMI</title>
+    <meta name="author" content="Smi S6">
+    <meta name="description" content="Smi E-commerce website">
+    <meta name="keywords" content="ecommerce, online shopping, products">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/contactussuccess.css">
+    <link rel="shortcut icon" type="image/jpeg" href="{% static 'favicon/favicon.jpg' %}">
+
+
+  </head>
+  <body>
+    <header>
+      {% include "ecom/navbar.html" %}
+    </header>
+    <main>
+      <div class="jumbotron">
+        <h1 class="display-4">Your message sent successfully!</h1>
+        <p class="lead">We will respond to your feedback soon.</p>
+        <hr class="my-4">
+        <p>Check out our other features!</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
+        </p>
+      </div>
+    </main>
+    <footer>
+      {% include "ecom/footer.html" %}
+    </footer>
+  </body>
+</html>

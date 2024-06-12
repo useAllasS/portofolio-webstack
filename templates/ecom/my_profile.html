@@ -1,0 +1,55 @@
+{% extends 'ecom/customer_base.html' %}
+
+{% load static %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+<br><br>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="row justify-content-center">
+            <div class="col-md-4 col-lg-3 mb-3">
+              <img src="{% static customer.profile_pic.url if customer.profile_pic else 'static/profile_pic/CustomerProfilePic/defualt.png' %}" alt="Profile Picture" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
+            </div>
+          </div>
+          <h4 class="card-title text-center mb-4">{{ customer.get_full_name }}</h4>
+          <hr>
+          <div class="row mb-3">
+            <div class="col-4">
+              <h6 class="text-muted">Email:</h6>
+            </div>
+            <div class="col-8">
+              <p>{{ request.user.email }}</p>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-4">
+              <h6 class="text-muted">Address:</h6>
+            </div>
+            <div class="col-8">
+              <p>{{ customer.address }}</p>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-4">
+              <h6 class="text-muted">Phone:</h6>
+            </div>
+            <div class="col-8">
+              <p>{{ customer.mobile }}</p>
+            </div>
+          </div>
+          <div class="row justify-content-center mt-4">
+            <div class="col-8">
+              <a href="{% url 'edit-profile' %}" class="btn btn-primary btn-block"><i class="fa fa-pencil"></i> Edit Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

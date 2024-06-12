@@ -1,0 +1,5 @@
+virtualenv env
+env\scripts\activate
+python manage.py runserver
+
+yarbi ikhdm blamachakil 

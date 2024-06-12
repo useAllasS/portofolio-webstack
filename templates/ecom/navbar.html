@@ -1,0 +1,126 @@
+
+
+
+
+{% load static %}
+{% if request.user.is_authenticated %}
+  {% include "ecom/customer_navbar.html" %}
+{% else %}
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <title>Ecommerce SMI</title>
+    <link rel="stylesheet" type="text/css" href="/static/CSS/homebase.css">
+  </head>
+  <body>
+    <div id="navbar">
+      <div class="container">
+        <div class="row row1">
+          <ul class="largenav pull-right">
+            <li class="upper-links dropdown">
+              <a class="links" href="">Login & Sign Up</a>
+              <ul class="dropdown-menu">
+                <li class="profile-li"><a class="profile-links" href="/customerlogin">Login</a></li>
+                <li class="profile-li"><a class="profile-links" href="/customersignup">Sign Up</a></li>
+              </ul>
+            </li>
+            <li class="upper-links dropdown">
+              <a class="links" href="">Categories</a>
+              <ul class="dropdown-menu">
+                <li class="profile-li"><a class="profile-links" href="/category/pc/">pc</a></li>
+                <li class="profile-li"><a class="profile-links" href="/category/camera/">camera</a></li>
+                <li class="profile-li"><a class="profile-links" href="/category/moto/">moto</a></li>
+                <li class="profile-li"><a class="profile-links" href="/category/voiture/">voiture</a></li>
+                <li class="profile-li"><a class="profile-links" href="/category/velo/">velo</a></li>
+                <li class="profile-li"><a class="profile-links" href="/category/phone/">phone</a></li>
+                <li class="profile-li"><a class="profile-links" href="/category/tv/">tv</a></li>
+                <li class="profile-li"><a class="profile-links" href="/category/ordinateur/">ordinateur</a></li>
+              </ul>
+            </li>
+            <li class="upper-links"><a class="links" href="/aboutus">About Us</a></li>
+          </ul>
+        </div>
+        <div class="row row2">
+          <div class="col-sm-3">
+            <h2 style="margin:0px; margin-top: 15px">
+              <a style="text-decoration:none; color:white;" href="/">
+                <span class="largenav">E-commerce SMI</span>
+              </a>
+            </h2>
+          </div>
+          <div class="navbar-search smallsearch col-sm-7 col-xs-11">
+            <form action="/search" method="get" enctype="multipart/form-data">
+              <div class="row">
+                <input class="navbar-input col-xs-11" type="text" placeholder="Search for Products, Brands and more" name="query" id="query">
+                <button class="navbar-button col-xs-1" type="submit">
+                  <svg width="15px" height="15px">
+                    <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+
+
+
+
+
+
+       <!-- button search -->
+       <div class="upload-file col-sm-2">
+        <div class="row">
+          <form id="upload-form" method="POST" action="{% url 'homebase' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="col-sm-2">
+              <label for="file-upload" class="custom-file-upload">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                  <path d="M19.5 6H18c-.552 0-1-.447-1-1V3.5c0-.276-.224-.5-.5-.5h-9c-.276 0-.5.224-.5.5V5c0 .553-.448 1-1 1H4.5C3.673 6 3 6.673 3 7.5v12c0 .827.673 1.5 1.5 1.5h15c.827 0 1.5-.673 1.5-1.5v-12c0-.827-.673-1.5-1.5-1.5zM12 16.5c-2.481 0-4.5-2.019-4.5-4.5s2.019-4.5 4.5-4.5 4.5 2.019 4.5 4.5-2.019 4.5-4.5 4.5zm0-7c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5-1.119-2.5-2.5-2.5z"/>
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                </svg>
+              </label> 
+              <input id="file-upload" type="file" class="col-xs-11" name="image" onchange="submitForm(event)">
+            </div>
+        
+          
+          </form>
+        </div>
+      </div>
+      
+      <script>
+        function submitForm(event) {
+          event.preventDefault(); // Prevent default form submission
+          document.getElementById("upload-form").submit();
+        }
+        
+        document.getElementById("submit-button").addEventListener("click", function() {
+          document.getElementById("upload-form").submit();
+        });
+      </script>
+
+
+
+          <div class="cart1 largenav col-sm-1">
+            <a class="cart-button" href="/cart">
+              <svg class="cart-svg" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86 " fill="#fff"></path>
+              </svg> Cart <span class="item-number">{{ product_count_in_cart }}</span> </a>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <!-- content start-->
+    {% block content %}
+    {% endblock content %}
+    <!-- content end-->
+    <br><br><br><br><br>
+ 
+  </body>
+</html>
