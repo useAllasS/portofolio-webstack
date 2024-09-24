@@ -24,6 +24,9 @@ This project is a comprehensive e-commerce web application built with Django, of
 - **Recommendation System:** Personalized product recommendations based on user activity.
 - **Chatbot Integration:** Interactive chatbot for customer support and product inquiries.
 
+## Live Demo
+Check out the live version of the project here: [Visit the Website](https://fpn-smi.all-as.tech/)
+
 ## Technologies Used
 - **Backend:** Django, Django REST Framework
 - **Frontend:** HTML, CSS, JavaScript
@@ -137,13 +140,13 @@ Follow these instructions to set up and run the project locally.
 
 ## Screenshots
 **Homepage:**
-![Homepage](images/homepage_screenshot.png)
+![Homepage](imags/homepage_screenshot.png)
 
 **Product Category:**
-![Category](images/category_screenshot.png)
+![Category](imags/category_screenshot.png)
 
 **Recommendations:**
-![Recommendations](images/recommendations_screenshot.png)
+![Recommendations](imags/recommendations_screenshot.png)
 
 ## Contributing
 Contributions are welcome! Please fork this repository and submit a pull request.
@@ -154,4 +157,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 - **Name:** Youssef
 - **Email:** sananonyme@gmail.com
-- **LinkedIn:** [Your LinkedIn](https://www.linkedin.com/in/yourprofile)
+- **LinkedIn:** [My LinkedIn](https://www.linkedin.com/in/youssef-nita-762771205/)
