@@ -140,13 +140,13 @@ Follow these instructions to set up and run the project locally.
 
 ## Screenshots
 **Homepage:**
-![Homepage](imags/homepage_screenshot.png)
+![Homepage](imgs/homepage_screenshot.png)
 
 **Product Category:**
-![Category](imags/category_screenshot.png)
+![Category](imgs/category_screenshot.png)
 
 **Recommendations:**
-![Recommendations](imags/recommendations_screenshot.png)
+![Recommendations](imgs/recommendations_screenshot.png)
 
 ## Contributing
 Contributions are welcome! Please fork this repository and submit a pull request.
