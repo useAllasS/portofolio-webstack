@@ -12,6 +12,3 @@ def classifierMobileNet(img_path, tope):
     preds = model.predict(X)  # predir des resultats
     produits_predits = decode_predictions(preds, top=tope)
     return produits_predits
-
-
-print("hello world")

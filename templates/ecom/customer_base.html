@@ -32,7 +32,12 @@
 </li>
                 <li class="upper-links"><a class="links" href="/my-order">Track Orders</a></li>
                 <li class="upper-links"><a class="links" href="/my-profile">Profile</a></li>
-                <li class="upper-links"><a class="links" href="/logout">Logout</a></li>
+                <li class="upper-links">
+                    <form id="logout-form" action="{% url 'logout' %}" method="POST" style="display: none;">
+                        {% csrf_token %}
+                    </form>
+                    <a class="links" href="#" onclick="document.getElementById('logout-form').submit();">Logout</a>
+                </li>
 
             </ul>
         </div>
@@ -102,7 +107,8 @@
 {% endblock content %}
 <!-- content end-->
 <br><br><br>
-
+  <br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 {% include 'ecom/footer.html' %}
 
 <script>

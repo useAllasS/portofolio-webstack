@@ -51,3 +51,4 @@ google-auth-oauthlib
 google-auth-httplib2
 google-api-python-client
 tensorflow_intel==2.16.1
+

@@ -155,14 +155,14 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-###the following lines goes in star 158 kola blssa khawya kt3mr blcode lit7tha:
+# the following lines goes in star 158 kola blssa khawya kt3mr blcode lit7tha:
 GOOGLE_OAUTH2_CLIENT_ID = '998682705880-92kplb4t1v6jdd1s9tac8m2smj0v11rj.apps.googleusercontent.com'
 # 998682705880-92kplb4t1v6jdd1s9tac8m2smj0v11rj.apps.googleusercontent.com
 GOOGLE_OAUTH2_CLIENT_SECRET = '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'
 # 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
 GOOGLE_OAUTH2_REDIRECT_URI = 'http://127.0.0.1/customer_login/callback/'
 
-##the following lines goes in star 166 kola blssa khawya kt3mr blcode lit7tha:
+# the following lines goes in star 166 kola blssa khawya kt3mr blcode lit7tha:
 
 PAYPAL_CLIENT_ID = 'AaqkScVUqRzQKL-v1P5eJfE6TxagBv4cvouFNROdDnuf3ZwuQcIR-jwkeFMa0KVuuv8nweDQta-1jS5x'
 # AaqkScVUqRzQKL-v1P5eJfE6TxagBv4cvouFNROdDnuf3ZwuQcIR-jwkeFMa0KVuuv8nweDQta-1jS5x
