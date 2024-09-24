@@ -46,8 +46,8 @@ Follow these instructions to set up and run the project locally.
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/yourusername/yourrepository.git
-    cd yourrepository
+    git clone https://github.com/useAllasS/portofolio-webstack.git
+    cd portofolio-webstack
     ```
 
 2. **Create a Virtual Environment:**
