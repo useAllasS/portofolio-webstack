@@ -8,6 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; 
 }
 
 /* Center container using Flexbox */
@@ -20,7 +21,8 @@ body {
 }
 
 .box {
-    max-width: 400px;
+    width: 100%; /* Allow it to be full width */
+    max-width: 400px; /* Limit the max width */
     padding: 40px;
     background: #061162;
     text-align: center;
@@ -28,6 +30,7 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     transition: 0.25s;
 }
+
 
 .box input[type="text"], .box input[type="password"] {
     background: none;
