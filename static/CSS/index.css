@@ -77,7 +77,7 @@ body {
 }
 
 .el-wrapper:hover .img {
-  webkit-filter: blur(7px);
+  filter: brightness(0.5);
   -o-filter: blur(7px);
   -ms-filter: blur(7px);
   filter: blur(7px);
